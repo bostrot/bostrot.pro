@@ -2,8 +2,10 @@
 
 blog_theme: light # Or use dark
 name: Bostrot
+title: Home
 paginate: 25
 url: https://bostrot.com # add your site url (format: https://example.com)
+enforce_ssl: bostrot.com
 
 
 # Optional settings

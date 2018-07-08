@@ -10,7 +10,7 @@ tags: [flutter]
 <tr>
 <th><a href="https://github.com/bostrot/flutter_repo_wiki">Download it here!</a></th>
 </tr>
-</table>
+</table><br />
 
 #### Features:
   - Fast access to Docs and Packages.
@@ -22,7 +22,7 @@ tags: [flutter]
 #### Integrations
   - [Flutter](https://flutter.io/)
 
-<hr><br />
+<hr>
 
 #### package_notifier
 

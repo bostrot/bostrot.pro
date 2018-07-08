@@ -23,7 +23,7 @@ tags: [telegram, nodejs]
   - [NodeJS](https://nodejs.org/en/)
   - [Telegraf](https://github.com/telegraf/telegraf/)
 
-<hr><br />
+<hr>
 
 <table>
 <tr>

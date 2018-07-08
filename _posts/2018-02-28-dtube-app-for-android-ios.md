@@ -26,7 +26,7 @@ tags: [flutter]
 #### Integrations
   - [Flutter](https://flutter.io/)
 
-<hr><br />
+<hr>
 
 #### DTubeViewer Native iOS & Android App
 
