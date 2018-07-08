@@ -3,13 +3,13 @@
 blog_theme: light # Or use dark
 name: Bostrot
 paginate: 25
-url: https://bostrot.github.io/bostrot.pro # add your site url (format: https://example.com)
+url: https://bostrot.github.io # add your site url (format: https://example.com)
 
 
 # Optional settings
 
 about_enabled: false # Change to true if you wish to show an icon in the navigation that redirects to the about page
-baseurl: # Set if blog doesn't sit at the root of the domain (format: /blog)
+baseurl: /bostrot.pro # Set if blog doesn't sit at the root of the domain (format: /blog)
 discus_identifier: # Add your Disqus identifier
 ga_analytics: # Add your GA Tracking Id
 local_fonts: false # Change to true if you wish to use local fonts
@@ -19,13 +19,13 @@ social:
   dribbble: # Add your Dribbble handle
   facebook: # Add your Facebook handle
   flickr: # Add your Flickr handle
-  github: # Add your GitHub handle
+  github: bostrot # Add your GitHub handle
   linkedin: # Add your LinkedIn handle
-  twitter: # Add your Twitter handle
-  email: # Add your Email address
-  bitcoin: # Add your Bitcoin link or address
+  twitter: _bostrot # Add your Twitter handle
+  email: me@bostrot.pro # Add your Email address
+  bitcoin: 18MQaV4zHEf1EY3ZmuUjdnXbfZxDNiyMhy # Add your Bitcoin link or address
   ethereum: # Add your Ethereum link or address
-  gitlab: # Add your GitLab handle
+  gitlab: bostrot # Add your GitLab handle
   youtube: # Add your Youtube handle
   twitch: # Add your Twitch handle
   discord: # Add you Discord server invitation ID
@@ -34,10 +34,10 @@ social:
   docker: # Add your Docker Hub handle
   instagram: # Add your Instagram handle
   keybase: # Add your Keybase handle
-  medium: # Add your Medium handle
+  medium: bostrot # Add your Medium handle
   spotify: # Add your Spotify handle
-  stackoverflow: # Add your Stack Overflow ID number
-  steam: # Add your Steam handle
+  stackoverflow: 5237072 # Add your Stack Overflow ID number
+  steam: bostrot # Add your Steam handle
 
 
 # Important settings (change at own risk)
@@ -81,3 +81,4 @@ plugins:
   - jemoji
 paginate_path: /posts/page/:num/
 permalink: posts/:slug
+
