@@ -3,16 +3,16 @@ layout: post
 title: "Content Streaming App"
 description: "Content streaming app build with Flutter and available for Android and iOS."
 thumb_image: "documentation/sample-image.jpg"
-tags: [telegram, nodejs]
+tags: [flutter]
 ---
 
 {% include image.html path="thumbnails/thumbnail_dtube_viewer.png" path-detail="thumbnails/thumbnail_dtube_viewer.png" alt="Telegram Support Bot" %}
 
 <table>
 <tr>
-<th>[Download it here!](https://github.com/bostrot/telegram-support-bot) or</th>
-<th>[Get it on Google Play](https://play.google.com/store/apps/details?id=pro.bostrot.dtubeviewer) or</th>
-<th>[Download on the App Store](https://itunes.apple.com/us/app/dtube-viewer/id1358140255?l=de&ls=1&mt=8)</th>
+<th><a href="https://github.com/bostrot/telegram-support-bot">Download it here!</a></th>
+<th><a href="https://play.google.com/store/apps/details?id=pro.bostrot.dtubeviewer">Get it on Google Play</a></th>
+<th><a href="https://itunes.apple.com/us/app/dtube-viewer/id1358140255?l=de&ls=1&mt=8">Download on the App Store</a></th>
 </tr>
 </table>
 
@@ -26,7 +26,7 @@ tags: [telegram, nodejs]
 #### Integrations
   - [Flutter](https://flutter.io/)
 
-<hr>
+<hr><br />
 
 #### DTubeViewer Native iOS & Android App
 
@@ -44,14 +44,14 @@ This is a native Android & iOS app developed for d.tube the ipfs/blockchain vide
 #### Screenshots
 <table>
 <tr>
-  <td><img width="240" src="https://i.imgur.com/W50ffE6.png"></img></td>
-  <td><img width="240" src="https://i.imgur.com/ZY4JOCh.jpg"></img></td>
-  <td><img width="240" src="https://i.imgur.com/VhLCH6U.jpg"></img></td>
+  <td><img width="240" src="https://i.imgur.com/W50ffE6.png"></td>
+  <td><img width="240" src="https://i.imgur.com/ZY4JOCh.jpg"></td>
+  <td><img width="240" src="https://i.imgur.com/VhLCH6U.jpg"></td>
 </tr>
 <tr>
-  <td><img width="240" src="https://i.imgur.com/K1ECraW.jpg"></img></td>
-  <td><img width="240" src="https://i.imgur.com/FGYPgm9.jpg"></img></td>
-  <td><img width="240" src="https://i.imgur.com/fY82XmN.jpg"></img></td>
+  <td><img width="240" src="https://i.imgur.com/K1ECraW.jpg"></td>
+  <td><img width="240" src="https://i.imgur.com/FGYPgm9.jpg"></td>
+  <td><img width="240" src="https://i.imgur.com/fY82XmN.jpg"></td>
 </tr>
 </table>
 

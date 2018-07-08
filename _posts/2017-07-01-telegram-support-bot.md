@@ -23,17 +23,7 @@ tags: [telegram, nodejs]
   - [NodeJS](https://nodejs.org/en/)
   - [Telegraf](https://github.com/telegraf/telegraf/)
 
-<hr>
-
-<table>
-<tr>
-<th>[![Bot API Version](https://img.shields.io/badge/Bot%20API-v3.1-f36caf.svg?style=flat-square)](https://core.telegram.org/bots/api)</th>
-<th>[![NPM Version](https://img.shields.io/npm/v/telegraf.svg?style=flat-square)](https://www.npmjs.com/)</th>
-<th>[![node](https://img.shields.io/node/v/telegraf.svg?style=flat-square)](https://www.npmjs.com/package/)</th>
-<th>[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square)](http://standardjs.com/)
-</th>
-</tr>
-</table>
+<hr><br />
 
 <table>
 <tr>
