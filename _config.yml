@@ -3,14 +3,14 @@
 blog_theme: light # Or use dark
 name: Bostrot
 paginate: 25
-url: https://bostrot.github.io # add your site url (format: https://example.com)
+url: https://bostrot.com # add your site url (format: https://example.com)
 
 
 # Optional settings
 
 about_enabled: false # Change to true if you wish to show an icon in the navigation that redirects to the about page
-baseurl: /bostrot.pro # Set if blog doesn't sit at the root of the domain (format: /blog)
-discus_identifier: # Add your Disqus identifier
+baseurl: # Set if blog doesn't sit at the root of the domain (format: /blog)
+discus_identifier: erics-blog-1 # Add your Disqus identifier
 ga_analytics: UA-108863569-1 # Add your GA Tracking Id
 local_fonts: false # Change to true if you wish to use local fonts
 rss_enabled: true # Change to false if not
