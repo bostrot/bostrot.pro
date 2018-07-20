@@ -54,6 +54,11 @@
             <script src="https://{{ site.discus_identifier }}.disqus.com/embed.js" async defer></script>
             <noscript>Please enable JavaScript to view the comments.</noscript>
           {% endif %}
+
+          {% if site.discord_identifier %}
+            <div id="discord_thread" class="article-comments"></div>
+            <iframe src="https://discordapp.com/widget?id={{ site.discord_identifier }}&theme={{ site.blog_theme }}" width="100%" height="300" allowtransparency="true" frameborder="0"></iframe>
+          {% endif %}
         </article>
         {% include footer.html %}
       </div>
