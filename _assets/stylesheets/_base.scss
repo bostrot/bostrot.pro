@@ -33,6 +33,10 @@ p {
   font-weight: $base-font-weight;
 }
 
+pre {
+  overflow: auto;
+}
+
 b,
 strong {
   font-weight: $base-font-weight-bold;
