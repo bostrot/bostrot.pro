@@ -1,0 +1,4 @@
+---
+slug: bot
+name: Bot
+---
