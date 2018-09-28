@@ -40,6 +40,15 @@
               document.getElementById('github-content').innerHTML = marked(document.getElementById('github-content').innerHTML);
             });
           </script>
+
+<script id="mNCC" style="overflow: auto;" language="javascript">
+  medianet_width = "728";
+  medianet_height = "90";
+  medianet_crid = "115644374";
+  medianet_versionId = "3111299";
+</script>
+<script src="//contextual.media.net/nmedianet.js?cid=8CUSPL382"></script>
+
           <div class="article-share">
             {% assign page_title = page.title | cgi_escape | truncate: 110 %}
             {% capture twitter-share-text %}{{ page_title }} - {{ page.url | absolute_url }}{% if site.social.twitter
@@ -67,15 +76,6 @@
           <noscript>Please enable JavaScript to view the comments.</noscript>
           {% endif %}
 
-          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-          <script>
-            (adsbygoogle = window.adsbygoogle || []).push({
-              google_ad_client: "ca-pub-9430927632405311",
-              enable_page_level_ads: true
-            });
-          </script>
-
-
           <div id="comments"></div>
           <script>
             var headDiv = document.getElementsByTagName("head")[0];
@@ -100,6 +100,12 @@
               color: #788187;
               font-size: 92%;
               text-decoration: none;
+                }
+
+                iframe {
+                  overflow: auto;
+                  max-width: 100%;
+                  width: 100%;
                 }
 
                 .comment_userpic {
