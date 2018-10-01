@@ -18,6 +18,7 @@ ga_analytics: UA-108863569-1 # Add your GA Tracking Id
 local_fonts: false # Change to true if you wish to use local fonts
 rss_enabled: true # Change to false if not
 scrollappear_enabled: true # Change to false to disable
+meta_tags: nodejs,cloudflare,steem,video,flutter,dart,dtube,javascript,bostrot,bots,dyndns,telegram
 social:
   dribbble: # Add your Dribbble handle
   facebook: # Add your Facebook handle

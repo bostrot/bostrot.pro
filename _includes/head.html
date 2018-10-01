@@ -16,6 +16,9 @@
   <meta name="twitter:title" content="{{ page.title | escape }}">
   <meta name="twitter:description" content="{{ page.description }}">
 
+  <meta name="author" content="{{ site.name }}">
+  <meta name="keywords" content="{{ site.meta_tags }}">
+
   {% if page.thumb_image %}
     {% if page.thumb_image contains '://' %}
       <meta property="og:image" content="{{ page.thumb_image }}">
