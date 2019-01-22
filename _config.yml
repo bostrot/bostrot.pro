@@ -5,7 +5,7 @@ name: Bostrot
 title: Home
 paginate: 25
 url: https://bostrot.com # add your site url (format: https://example.com)
-
+author: Eric Trenkel
 
 # Optional settings
 
