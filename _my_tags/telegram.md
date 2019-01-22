@@ -1,4 +1,0 @@
----
-slug: telegram
-name: Telegram
----

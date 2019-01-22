@@ -1,4 +1,0 @@
----
-slug: steem
-name: Steem
----

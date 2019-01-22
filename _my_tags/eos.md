@@ -1,4 +1,0 @@
----
-slug: eos
-name: EOS
----

@@ -1,20 +1,74 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:dc="https://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Bostrot</title>
+    <description></description>
+    <link>https://bostrot.com</link>
+    <atom:link href="https://bostrot.com/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>EOSconnect</title>
+        <description>Verify your EOS identity with EOSconnect without giving your sensitive data to others. Simply authorize third parties to use the data you want to share and revoke their access at any time. This is a fork of eosconnect-web with SQLite support, a static page and more new features.</description>
+        <pubDate>Sat, 24 Nov 2018 00:00:00 +0100</pubDate>
+        <link>https://bostrot.com/posts/eosconnect</link>
+        <guid isPermaLink="true">https://bostrot.com/posts/eosconnect</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Steem Bot Framework</title>
+        <description>A simple and light steem bot framework written in NodeJS where plugins can easily be integrated and managed. It can be used to create a ton of plugins which will split ressources and handle the broadcasting part for you. This concept should show a way to unify development on steem bots.</description>
+        <pubDate>Sun, 19 Aug 2018 00:00:00 +0200</pubDate>
+        <link>https://bostrot.com/posts/steembot</link>
+        <guid isPermaLink="true">https://bostrot.com/posts/steembot</guid>
+      </item>
+    
+      <item>
+        <title>Cloudflare Stream Video Uploader</title>
+        <description>This is a little example of how to use the currently in beta Cloudflare Stream which lets you easily publish your videos to the web without thinking on storage and nasty video compression, encoding etc. It could help people who want to create their own video platforms to handle video progressing and storage.</description>
+        <pubDate>Tue, 14 Aug 2018 00:00:00 +0200</pubDate>
+        <link>https://bostrot.com/posts/cf-video-uploader</link>
+        <guid isPermaLink="true">https://bostrot.com/posts/cf-video-uploader</guid>
+      </item>
+    
+      <item>
+        <title>Cloudflare DNS Updater</title>
+        <description>Simple Cloudflare DNS Updater script built on v4 of their API that supports multiple domains. It is built with NodeJS standard packages. Mainly built to make Cloudflare IP updating easy as it does not normally support DynDNS by default and provide it within other NodeJS applications. Customizable and easy to use.</description>
+        <pubDate>Sun, 29 Jul 2018 00:00:00 +0200</pubDate>
+        <link>https://bostrot.com/posts/cf-dns-updater</link>
+        <guid isPermaLink="true">https://bostrot.com/posts/cf-dns-updater</guid>
+      </item>
+    
+      <item>
+        <title>Steem Search API</title>
+        <description>A Steem Search/Indexing API mainly built for DTube. It uses a SQLite Database with better_sqlite3 in NodeJS which indexes posts and checks whether their videos are alive and depending on the result it adds those to the DB. The search happens through a search and returns the results in it's provided API.</description>
+        <pubDate>Thu, 19 Jul 2018 00:00:00 +0200</pubDate>
+        <link>https://bostrot.com/posts/steem-search-api</link>
+        <guid isPermaLink="true">https://bostrot.com/posts/steem-search-api</guid>
+      </item>
+    
+      <item>
+        <title>Flutter Wiki App</title>
+        <description>A simple app to keep track of Flutter packages and access the docs easily. It was intended to be like a little guideline and wikipedia for the Flutter SDK and those who work with it. It has three main features including the docs, the package list and a tag that adds your favorite packages to a list.</description>
+        <pubDate>Sun, 08 Jul 2018 00:00:00 +0200</pubDate>
+        <link>https://bostrot.com/posts/flutter-wiki-app</link>
+        <guid isPermaLink="true">https://bostrot.com/posts/flutter-wiki-app</guid>
+      </item>
+    
+      <item>
+        <title>DTube App for Android &amp; iOS</title>
+        <description>Content streaming app build with Flutter and available for Android and iOS. This app lets you access, share and download content on the video platform DTube easily and lets you customize it with even less effort. Written to give those who want a nice UI and some extra features on-the-go.</description>
+        <pubDate>Wed, 28 Feb 2018 00:00:00 +0100</pubDate>
+        <link>https://bostrot.com/posts/dtube-app-for-android-ios</link>
+        <guid isPermaLink="true">https://bostrot.com/posts/dtube-app-for-android-ios</guid>
+      </item>
+    
+      <item>
+        <title>Telegram Support Bot</title>
+        <description>A support bot for the messenger Telegram built on top of the Telegraf framework. This is a support ticket bot for little companies on Telegram. It is intended to control a main bot and let a small supergroup of admins handle all incoming tickets with a spam protection and image forwarding.</description>
+        <pubDate>Sat, 01 Jul 2017 00:00:00 +0200</pubDate>
+        <link>https://bostrot.com/posts/telegram-support-bot</link>
+        <guid isPermaLink="true">https://bostrot.com/posts/telegram-support-bot</guid>
+      </item>
+    
   </channel>
 </rss>

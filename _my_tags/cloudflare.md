@@ -1,4 +1,0 @@
----
-slug: cloudflare
-name: Cloudflare
----

@@ -1,4 +1,0 @@
----
-slug: bot
-name: Bot
----

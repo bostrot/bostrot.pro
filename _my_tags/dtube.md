@@ -1,4 +1,0 @@
----
-slug: dtube
-name: DTube
----

@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Bostrot | Steem Bot Framework</title>
+  <meta name="description" content="A simple and light steem bot framework written in NodeJS where plugins can easily be integrated and managed. It can be used to create a ton of plugins which will split ressources and handle the broadcasting part for you. This concept should show a way to unify development on steem bots.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Steem Bot Framework">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bostrot.com/posts/steembot">
+  <meta property="og:description" content="A simple and light steem bot framework written in NodeJS where plugins can easily be integrated and managed. It can be used to create a ton of plugins which will split ressources and handle the broadcasting part for you. This concept should show a way to unify development on steem bots.">
+  <meta property="og:site_name" content="Bostrot">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://bostrot.com/posts/steembot">
+  <meta name="twitter:title" content="Steem Bot Framework">
+  <meta name="twitter:description" content="A simple and light steem bot framework written in NodeJS where plugins can easily be integrated and managed. It can be used to create a ton of plugins which will split ressources and handle the broadcasting part for you. This concept should show a way to unify development on steem bots.">
+
+  <meta name="author" content="Eric Trenkel">
+  <meta name="keywords" content="nodejs,cloudflare,steem,video,flutter,dart,dtube,javascript,bostrot,bots,dyndns,telegram">
+
+  <!-- merry christmas and a happy new year. enjoy these snowflakes :) -->
+  <script>
+    var month = new Date().getMonth(); 
+    if (!(month > 10 || month < 3)) document.getElementsByClassName("snowflakes")[0].style.display = "none";
+  </script>
+  <style>
+    /* customizable snowflake styling */
+    .snowflake {
+      color: #fff;
+      font-size: 0.5em;
+      font-family: Arial, sans-serif;
+      text-shadow: 0 0 5px #000;
+    }
+
+    @-webkit-keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@-webkit-keyframes snowflakes-shake{0%,100%{-webkit-transform:translateX(0);transform:translateX(0)}50%{-webkit-transform:translateX(80px);transform:translateX(80px)}}@keyframes snowflakes-fall{0%{top:-10%}100%{top:100%}}@keyframes snowflakes-shake{0%,100%{transform:translateX(0)}50%{transform:translateX(80px)}}.snowflake{position:fixed;top:-10%;z-index:9999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:default;-webkit-animation-name:snowflakes-fall,snowflakes-shake;-webkit-animation-duration:10s,3s;-webkit-animation-timing-function:linear,ease-in-out;-webkit-animation-iteration-count:infinite,infinite;-webkit-animation-play-state:running,running;animation-name:snowflakes-fall,snowflakes-shake;animation-duration:10s,3s;animation-timing-function:linear,ease-in-out;animation-iteration-count:infinite,infinite;animation-play-state:running,running}.snowflake:nth-of-type(0){left:1%;-webkit-animation-delay:0s,0s;animation-delay:0s,0s}.snowflake:nth-of-type(1){left:10%;-webkit-animation-delay:1s,1s;animation-delay:1s,1s}.snowflake:nth-of-type(2){left:20%;-webkit-animation-delay:6s,.5s;animation-delay:6s,.5s}.snowflake:nth-of-type(3){left:30%;-webkit-animation-delay:4s,2s;animation-delay:4s,2s}.snowflake:nth-of-type(4){left:40%;-webkit-animation-delay:2s,2s;animation-delay:2s,2s}.snowflake:nth-of-type(5){left:50%;-webkit-animation-delay:8s,3s;animation-delay:8s,3s}.snowflake:nth-of-type(6){left:60%;-webkit-animation-delay:6s,2s;animation-delay:6s,2s}.snowflake:nth-of-type(7){left:70%;-webkit-animation-delay:2.5s,1s;animation-delay:2.5s,1s}.snowflake:nth-of-type(8){left:80%;-webkit-animation-delay:1s,0s;animation-delay:1s,0s}.snowflake:nth-of-type(9){left:90%;-webkit-animation-delay:3s,1.5s;animation-delay:3s,1.5s}.snowflake:nth-of-type(10){left:25%;-webkit-animation-delay:2s,0s;animation-delay:2s,0s}.snowflake:nth-of-type(11){left:65%;-webkit-animation-delay:4s,2.5s;animation-delay:4s,2.5s}
+  </style>
+  <div class="snowflakes" aria-hidden="true">
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+      ❆
+    </div>
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+      ❆
+    </div>
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+      ❆
+    </div>
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+      ❆
+    </div>
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+      ❆
+    </div>
+    <div class="snowflake">
+      ❅
+    </div>
+    <div class="snowflake">
+      ❆
+    </div>
+  </div>
+  <!-- end christmas -->
+
+  
+  
+  <meta property="og:image" content="https://bostrot.com/assets/documentation/sample-image-0a264584b152aa8d86f61525d05ae1131787d0a1029aa1cb7e3e4148b5d34755.jpg">
+  <meta name="twitter:image" content="https://bostrot.com/assets/documentation/sample-image-0a264584b152aa8d86f61525d05ae1131787d0a1029aa1cb7e3e4148b5d34755.jpg">
+  
+  
+
+  <link href="https://bostrot.com/feed.xml" type="application/rss+xml" rel="alternate" title="Bostrot Last 10 blog posts" />
+
+  
+
+  
+  <link rel="icon" type="image/x-icon" href="/assets/favicon-light-c54f304f6e438a026972f280fc3df8db2aa0d186ba791410e25f889f5a49b281.ico">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+  <link rel="stylesheet" type="text/css" href="/assets/light-255c0b0e36b6ecc17f4b5c96d8bfceba9bf337141c9f4586617100dda767a807.css">
+  
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Bostrot"><img src="/assets/logo-04c23f86de4fdc62ea16539594873a1f62257aa5912fdfc437e9b9b99027a528.svg"></img></a>
+
+  <ul class="header-links">
+    
+    
+      <li>
+        <a href="https://twitter.com/bostrot_" rel="noreferrer noopener" target="_blank" title="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
+  <use href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter" xlink:href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/bostrot" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://stackoverflow.com/users/5237072" rel="noreferrer noopener" target="_blank" title="Stack Overflow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-stackoverflow">
+  <use href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow" xlink:href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="https://blockexplorer.com/address/18MQaV4zHEf1EY3ZmuUjdnXbfZxDNiyMhy" rel="noreferrer noopener" target="_blank" title="Bitcoin">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-bitcoin">
+  <use href="/assets/bitcoin-5b11c4ea91819f58e20217dfecd78cbb5c0f33928455c3b00485daaac83f433e.svg#icon-bitcoin" xlink:href="/assets/bitcoin-5b11c4ea91819f58e20217dfecd78cbb5c0f33928455c3b00485daaac83f433e.svg#icon-bitcoin"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:me@bostrot.pro" title="Email">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-email">
+  <use href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email" xlink:href="/assets/email-782473193bf750036fdb90e8daa075508a20509d01854c09f3237c144a3f0601.svg#icon-email"></use>
+</svg>
+
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>Steem Bot Framework</h1>
+            <p>A simple and light steem bot framework written in NodeJS where plugins can easily be integrated and managed. It can be used to create a ton of plugins which will split ressources and handle the broadcasting part for you. This concept should show a way to unify development on steem bots.</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                August 19, 2018
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                1 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                <a href="/tag/nodejs">nodejs</a>
+                
+                <a href="/tag/bot">bot</a>
+                
+                <a href="/tag/steem">steem</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content" id="github-content">
+            
+
+          </div>
+          <script>$("#github-content").load("https://raw.githubusercontent.com/bostrot/steembot/master/README.md", function () {
+              document.getElementById('github-content').innerHTML = marked(document.getElementById('github-content').innerHTML);
+            });
+          </script>
+
+<script id="mNCC" style="overflow: auto;" language="javascript">
+  medianet_width = "728";
+  medianet_height = "90";
+  medianet_crid = "115644374";
+  medianet_versionId = "3111299";
+</script>
+<script src="//contextual.media.net/nmedianet.js?cid=8CUSPL382"></script>
+
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=Steem+Bot+Framework%20-%20https://bostrot.com/posts/steembot%20by%20@bostrot_" title="Share on Twitter"
+              rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512">
+                <path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z" /></svg>
+            </a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://bostrot.com/posts/steembot" title="Share on Facebook"
+              rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512">
+                <path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z" /></svg>
+            </a>
+            <a href="https://plus.google.com/share?url=https://bostrot.com/posts/steembot" title="Share on Google+" rel="noreferrer noopener"
+              target="_blank">
+              <svg viewBox="0 0 128 128">
+                <path d="M40.7 55.9v16.1c0 0 15.6 0 22 0C59.2 82.5 53.8 88.2 40.7 88.2c-13.3 0-23.7-10.8-23.7-24.2s10.4-24.2 23.7-24.2c7.1 0 11.6 2.5 15.8 5.9 3.3-3.3 3.1-3.8 11.6-11.9 -7.2-6.6-16.8-10.6-27.4-10.6C18.2 23.3 0 41.5 0 64c0 22.5 18.2 40.7 40.7 40.7 33.6 0 41.8-29.3 39-48.8H40.7zM113.9 56.7V42.6h-10.1v14.1H89.4v10.1h14.5v14.5h10.1V66.8H128V56.7H113.9z" /></svg>
+            </a>
+          </div>
+
+          
+
+          <div id="comments"></div>
+          <script>
+            var headDiv = document.getElementsByTagName("head")[0];
+            var styleDiv = document.createElement("style");
+            var scriptDiv0 = document.createElement("script");
+            scriptDiv0.setAttribute("src", "https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment.min.js");
+
+            var scriptDiv1 = document.createElement("script");
+            scriptDiv1.setAttribute("src", "https://cdn.jsdelivr.net/npm/marked/marked.min.js");
+            styleDiv.innerHTML = `
+                img {
+              max-width: 100%;
+              max-width: 100%;
+                }
+
+                a:active,
+                a:hover {
+              color: #19B698;
+                }
+
+                .comment > a {
+              color: #788187;
+              font-size: 92%;
+              text-decoration: none;
+                }
+
+                iframe {
+                  overflow: auto;
+                  max-width: 100%;
+                  width: 100%;
+                }
+
+                .comment_userpic {
+              width: 48px;
+              height: 48px;
+              display: inline-block;
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: 50% 50%;
+              border-radius: 50%;
+              margin-right: 0.6rem;
+              position: relative;
+              float: left;
+                }
+
+                .comment {
+                  overflow: auto;
+              width: 100%;
+              float: right !important;
+              position: relative;
+              clear: both;
+              margin-bottom: 2.4rem;
+              margin-top: 2em;
+                }
+
+                .comment_header {
+              margin-left: 62px;
+                }
+
+                .comment_body {
+              margin-top: 0.1em;
+              margin-left: 62px;
+                }
+
+                .comment_footer {
+              margin-top: 0.1em;
+              margin-left: 62px;
+              color: #788187;
+              font-size: 92%;
+                }
+
+                .comment_date {
+              color: #788187;
+              font-size: 92%;
+                }`;
+            headDiv.appendChild(styleDiv);
+            headDiv.appendChild(scriptDiv0);
+            headDiv.appendChild(scriptDiv1);
+            var loadComments = function (data, offset, commentId) {
+              var l = data.length;
+              if (data.length === undefined) {
+                l = 1;
+              }
+              for (var i = 0; i < l; i++) {
+                commentData = data[i];
+                if (offset === 0) {
+                  commentData = data
+                }
+                // userpic
+                var userpic = document.createElement('div');
+                userpic.style.backgroundImage = "url(" + commentData.user.avatar_url + ")";
+                userpic.className = 'comment_userpic';
+                // header
+                var header = document.createElement('div');
+                header.className = 'comment_header';
+                header.innerHTML = '<strong>' + commentData.user.login + ' · </strong><i class="comment_date">' + moment(
+                  commentData.created_at).fromNow() +
+                  '<a style="float: right;" href="#"><i class="fa fa-flag"></i></a></p>';
+                userpic.className = 'comment_userpic';
+                // body
+                var body = document.createElement('div');
+                body.className = 'comment_body';
+                body.innerHTML = marked(commentData.body);
+                // footer
+                var footer = document.createElement('div');
+                footer.className = 'comment_footer';
+                //footer.innerHTML = ("<a href=\"#\" class=\"fa fa-chevron-circle-up\"></a> $" + (commentData.reactions["+1"]));
+                // comment div
+                var comment = document.createElement('div');
+                comment.id = commentData.number;
+                comment.className = 'comment';
+                comment.appendChild(userpic);
+                comment.appendChild(header);
+                comment.appendChild(body);
+                comment.appendChild(footer);
+                if (offset > 90) {
+                  comment.style.width = '90%';
+                }
+                else {
+                  comment.style.width = (100 - offset) + '%';
+                }
+                if (commentId !== undefined) {
+                  document.getElementById(commentId).appendChild(comment)
+                } else {
+                  document.getElementById("comments").appendChild(comment)
+                }
+              }
+            }
+
+            if (window.fetch) {
+              var fetchUrl = "https://afternoon-citadel-61886.herokuapp.com/comments?q=/repos/bostrot/steembot"
+              console.log(fetchUrl)
+              var url = fetchUrl + "/issues";
+
+              window
+                .fetch(url, { Accept: "application/vnd.github.v3.html+json" })
+                .then(function (response) {
+                  return response.json()
+                })
+                .then(function (json) {
+                  if (json.length) {
+                    for (var i = 1; i <= json[0]["number"]; i++) {
+                      var cache = i;
+                      i = json[0]["number"] + 1 - i;
+                      window
+                        .fetch(fetchUrl + "/issues/" + i, { Accept: "application/vnd.github.v3.html+json" })
+                        .then(function (response) {
+                          return response.json()
+                        })
+                        .then(function (json) {
+                          if (json.message !== "Not Found") {
+                            loadComments(json, 0)
+                          }
+                        })
+                      subComments(cache);
+                      i = cache;
+                    }
+                  }
+                })
+            }
+            function subComments(id) {
+              window
+                .fetch(fetchUrl + "/issues/" + id + "/comments", { Accept: "application/vnd.github.v3.html+json" })
+                .then(function (response) {
+                  return response.json()
+                })
+                .then(function (json) {
+                  if (json.length && json.message !== "Not Found") {
+                    loadComments(json, 5, id)
+                  } else {
+                  }
+                })
+            }
+          </script>
+
+<p>Comments are using GitHub Issues. You can post by creating an <a href="https://github.com/bostrot/steembot/issues/">issue</a> or reply to one.</p>
+
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>Copyright
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
+    <script>
+      document.write(new Date().getFullYear())
+    </script> by
+    <a href="https://bostrot.com/" rel="noreferrer noopener" target="_blank" title="Bostrot">Bostrot</a> and
+    <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">Chalk</a>. See our
+    <a href="https://www.iubenda.com/privacy-policy/56404285/full-legal">Privacy Policy</a> and 
+    <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">RSS.</a>
+  </p>
+</footer>
+      </div>
+    </div>
+  </main>
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108863569-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-108863569-1');
+  </script>
+
+
+<script type="text/javascript" src="/assets/vendor-0fb4b91f7ad6c193a69224eba7a01b691a2d7528ee672607575ccc0df3aea545.js"></script>
+
+
+  <script type="text/javascript" src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js"></script>
+
+
+
+  <script type="text/javascript" src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js"></script>
+
+
+<script type="text/javascript" src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js"></script>
+</body>
+
+</html>
